@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--Properties (to make it easier to maintain)-->
+    <properties>
+        <deploy.dir>${user.home}\Desktop</deploy.dir>
+        <junit.version>4.12</junit.version>
+        <!--<junit.version>[3,)</junit.version>-->
+        <maven.jar.plugin>3.0.2</maven.jar.plugin>
+    </properties>
+
+
+    <!--Project Informations-->
+    <groupId>mfes.maven.operationalsystems</groupId>
+    <artifactId>OperationalSystems.MAVEN</artifactId>
+    <packaging>jar</packaging>
+    <name>OperationalSystems(MAVEN)</name>
+    <!--<classifier>jdk18</classifier>-->
+    <version>1.0</version>
+    <description>OperationalSystemsHW2 project with MAVEN</description>
+
+
+
+
+
+    <!--Dependencies-->
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <!--Use this to avoid keeping this lib on deployment version-->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>${maven.jar.plugin}</version>
+        </dependency>
+    </dependencies>
+
+
+    <!--Build section-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin}</version>
+                <configuration>
+                    <archive>
+                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--Deploy section-->
+
+    <distributionManagement>
+        <repository>
+            <id>maven_deploy</id>
+            <name>OperationalSystems(Maven)_deploy</name>
+            <url>file:///${deploy.dir}</url>
+        </repository>
+    </distributionManagement>
+
+
+    <!--Team members-->
+    <developers>
+        <developer>
+            <id>jose</id>
+            <name>José Lucas</name>
+            <email>chagasjoselucas@gmail.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <organization>MFES</organization>
+            <timezone>-2</timezone>
+        </developer>
+
+        <developer>
+            <id>flavio</id>
+            <name>Flavio Cavalcante</name>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <organization>MFES</organization>
+            <timezone>-2</timezone>
+        </developer>
+    </developers>
+</project>
