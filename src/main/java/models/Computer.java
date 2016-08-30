@@ -37,14 +37,47 @@ public class Computer implements Runnable{
 		}
 		return false;
 	}
-	
+	public void conflitctMethod(){
+		while(true){
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+			System.out.println("PARA FAZER UM CONFLITO doido");
+
+		}
+	}
+
 	@Override
 	public void run() {
 		
 		//starting the os thread.
 		Thread osThread = new Thread(operationalSystem);//in this thread we'll run the checking for the informations and will start the threads of the process too..
 		osThread.start();
-		
 	}
 	
 	
