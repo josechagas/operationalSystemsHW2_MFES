@@ -34,7 +34,7 @@ public class Computer implements Runnable{
         System.out.println("Git update 2: Flavio");
         System.out.println("Git update 3: Flavio");
         System.out.println("Git update 4: Lucas");
-        System.out.println("Git update 5: Flavio");
+        System.out.println("Git update 5: Flavio alteracao para gerar o conflito");
 
         
     }
