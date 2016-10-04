@@ -6,7 +6,8 @@
 
     <!--Properties (to make it easier to maintain)-->
     <properties>
-        <deploy.dir>${user.home}\Desktop</deploy.dir>
+        <local_deploy_dir>${user.home}\Desktop</local_deploy_dir>
+        <remote_deploy_dir>http://172.17.0.2:32772/resumes/new</remote_deploy_dir>
         <junit.version>4.12</junit.version>
         <!--<junit.version>[3,)</junit.version>-->
         <maven.jar.plugin>3.0.2</maven.jar.plugin>
@@ -68,7 +69,9 @@
         <repository>
             <id>maven_deploy</id>
             <name>OperationalSystems(Maven)_deploy</name>
-            <url>file:///${deploy.dir}</url>
+            <!--<url>file:///${local_deploy_dir}</url>-->
+            <url>${remote_deploy_dir}</url>
+
         </repository>
     </distributionManagement>
 
