@@ -13,7 +13,7 @@
     </properties>
 
 
-    <!--Project Informations-->
+    <!--Project Informations     http://stackoverflow.com/questions/3996802/list-all-of-the-possible-goals-in-maven-2-->
     <groupId>mfes.maven.operationalsystems</groupId>
     <artifactId>OperationalSystems.MAVEN</artifactId>
     <packaging>jar</packaging>
