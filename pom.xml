@@ -4,12 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!--Properties (to make it easier to maintain)-->
+    <!--Properties (to make it easier to maintain) 172.17.0.2 http://localhost:32772/resumes/new-->
     <properties>
-        <local_deploy_dir>${user.home}\Desktop</local_deploy_dir>
-        <remote_deploy_dir>http://172.17.0.2:32772/resumes/new</remote_deploy_dir>
+        <local_deploy_dir>file:///${user.home}</local_deploy_dir>
         <junit.version>4.12</junit.version>
-        <!--<junit.version>[3,)</junit.version>-->
         <maven.jar.plugin>3.0.2</maven.jar.plugin>
     </properties>
 
@@ -45,10 +43,10 @@
         </dependency>
     </dependencies>
 
-
     <!--Build section-->
 
     <build>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -60,21 +58,32 @@
                     </archive>
                 </configuration>
             </plugin>
+
         </plugins>
+
+        <!--This one makes maven using sftp, ftp , depends of your configurations https://spring.io/blog/2010/11/30/maven-configuration-for-spring-integration-->
+        <!--<extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+            </extension>
+        </extensions> -->
+
     </build>
 
     <!--Deploy section-->
-
+    
     <distributionManagement>
-        <repository>
-            <id>maven_deploy</id>
-            <name>OperationalSystems(Maven)_deploy</name>
-            <!--<url>file:///${local_deploy_dir}</url>-->
-            <url>${remote_deploy_dir}</url>
 
+        <repository>
+            <id>ftp_repository</id>
+            <name>OperationalSystems(Maven)_deploy</name>
+            <url>${local_deploy_dir}</url>
         </repository>
+
     </distributionManagement>
 
+    
 
     <!--Team members-->
     <developers>
